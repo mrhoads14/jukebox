@@ -28,3 +28,16 @@ export const readTrackById = async (id) => {
     throw err;
   }
 }
+
+export const readAllTracks = async () => {
+  const sql = `
+  SELECT * FROM tracks;
+  `;
+  try {
+    const { rows: tracks } = await db.query(sql);
+    return tracks;
+  } catch (err) {
+    console.error('error in readAllTracks: ', err);
+    throw err;
+  }
+}
