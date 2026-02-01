@@ -22,7 +22,6 @@ tracksRouter.get("/", async (req, res, next) => {
 
 
 tracksRouter.get("/:id", async (req, res, next) => {
-  // pass
   const { id } = req.params;
   const numRegex = /\D/;
   if (numRegex.test(id) || Number(id) < 1) {
